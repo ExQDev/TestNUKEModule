@@ -45,4 +45,4 @@ Customize your pasted into `.pro` file lines if you are going to make a release 
 
 ## Develop
 
-For more information look the [testnukemodule.h](testnukemodule.h), it has to be good commented.
+For more information look the [testnukeemodule.h](testnukeemodule.h), it has to be good commented.
