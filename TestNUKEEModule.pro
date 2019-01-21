@@ -36,9 +36,9 @@ HEADERS += \
 #    INSTALLS += target
 #}
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../NukeEngine/build/debug/release/ -lNukeEngine
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../NukeEngine/build/debug/debug/ -lNukeEngine
-else:unix: LIBS += -L$$PWD/../NukeEngine/build/debug/ -lNukeEngine
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../NukeEngine/build/debug/ -lNukeEngine
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../NukeEngine/build/debug/ -lNukeEngine
+else:unix: CONFIG(debug, debug|release): LIBS += -L$$PWD/../NukeEngine/build/debug/ -lNukeEngine
 
 INCLUDEPATH += $$PWD/../NukeEngine
 DEPENDPATH += $$PWD/../NukeEngine

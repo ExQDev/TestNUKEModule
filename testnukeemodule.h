@@ -31,7 +31,7 @@ using namespace std;
 #define MSG_ON_CLOSE    "!! ON CLOSE [TEST MODULE] !!"
 
 #define WINDOW_TITLE    "Test Nuke Window"
-#define WINDOW_BODY_TXT "This is a test window for NukeEngine sample plugin. You can make your own windows, but be careful with designing and other functions!\n Remember, that this functions is done in loop, so, be sure you are using background threads for heavy functions!\n\nThats all! Enjoy!:)"
+#define WINDOW_BODY_TXT "This is a test window for NukeEngine sample plugin. You can make your own windows, but be careful with designing and other functions!\n Remember, that these functions are done in loop, so, be sure you are using background threads for heavy functions!\n\nThats all! Enjoy!:)"
 #define WINDOW_KEY      "testnukemodule-testwin"
 
 #define MENU_PATH       "Plugins/TestPlugin"
