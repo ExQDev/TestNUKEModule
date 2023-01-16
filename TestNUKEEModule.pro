@@ -9,9 +9,11 @@ QT       -= core gui
 TARGET = TestNUKEEModule.dll
 TEMPLATE = lib
 
-DEFINES += TESTNUKEEMODULE_LIBRARY GLM_ENABLE_EXPERIMENTAL
+DEFINES += TESTNUKEEMODULE_LIBRARY GLM_ENABLE_EXPERIMENTAL BX_CONFIG_DEBUG
 
-INCLUDEPATH += ../NukeEngine-Editor
+INCLUDEPATH += $$PWD/../NukeEngine/include \
+               $$PWD/../NukeEngine/deps \
+               $$PWD/../NukeEngine/deps/glm
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
@@ -29,7 +31,7 @@ SOURCES += \
 
 HEADERS += \
         testnukeemodule.h \
-    ../NukeEngine-Editor/interface/NUKEEInteface.h
+        interface/NUKEEInteface.h
 
 #unix {
 #    target.path = /usr/lib
@@ -40,5 +42,4 @@ win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../NukeEngine/build/debug/
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../NukeEngine/build/debug/ -lNukeEngine
 else:unix: CONFIG(debug, debug|release): LIBS += -L$$PWD/../NukeEngine/build/debug/ -lNukeEngine
 
-INCLUDEPATH += $$PWD/../NukeEngine
 DEPENDPATH += $$PWD/../NukeEngine

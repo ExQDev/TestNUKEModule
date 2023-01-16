@@ -4,8 +4,9 @@
 #include <string>
 #include <iostream>
 
-#include "interface/NUKEEInteface.h"
-#include "deps/imgui/imgui.h"
+#include <interface/NUKEEInteface.h>
+#include <imgui/imgui.h>
+#include <interface/EditorInstance.h>
 
 // NOTE, that singletons are created for different modules. Use AppInstance-><singleton> to get access to engines singletons!
 // To check it, you can try next code:
@@ -97,9 +98,9 @@ struct TestNUKEEModule : public NUKEModule
 
             // Address of main renderer. Note, that if you want use App renderer or another singleton, you need to get it from passed instance, do not use GetSingleton directly - there will be escepcially module's singleton, local.
             cout << "Module Render: " << instance->render << endl;
-            if(NukeOGL* gl = dynamic_cast<NukeOGL*>(instance->render)){
+            if(NukeBGFX* render = dynamic_cast<NukeBGFX*>(instance->render)){
                 // Setting up a callback
-                gl->setOnClose(OnClose);
+                render->setOnClose(OnClose);
             }
 
             // Check if passed instance is editor, then...
@@ -157,7 +158,7 @@ struct TestNUKEEModule : public NUKEModule
 };
 
 
-API TestNUKEEModule plugin;                                         // EVERY plugin MUST HAVE this two lines with YOUR plugin module class
+NUKEENGINE_API TestNUKEEModule plugin;                                         // EVERY plugin MUST HAVE this two lines with YOUR plugin module class
 TestNUKEEModule plugin;
 
 #endif // TESTNUKEEMODULE_H
